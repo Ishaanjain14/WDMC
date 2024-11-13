@@ -1,0 +1,110 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  justify-content: center;
+  min-height: 100vh;
+  background: #ba241f;
+}
+.wrapper{
+  width: 4500px;
+  background: #f0fd03;
+  border-radius: 45px;
+}
+.wrapper header{
+  display: flex;
+  background-color: #3ffd00;
+  align-items: center;
+  padding: 30px 45px 10px;
+  justify-content: space-between;
+}
+header .icons{
+  display: flex;
+}
+header .icons span{
+  height: 38px;
+  width: 38px;
+  margin: 0 1px;
+  cursor: pointer;
+  color: #4b18cb;
+  text-align: center;
+  line-height: 38px;
+  font-size: 1.9rem;
+  user-select: none;
+  border-radius: 50%;
+}
+.icons span:last-child{
+  margin-right: -10px;
+}
+header .current-date{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #f300c2;
+  font-size: 2.45rem;
+  font-weight: 1000;
+}
+.calendar{
+  padding: 32px;
+}
+.calendar ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+.calendar .days{
+  margin-bottom: 15px;
+}
+.calendar li{
+  color: #f300c2;
+  width: calc(100% / 7);
+  font-size: 1.24rem;
+}
+.calendar .weeks li{
+  font-weight: 500;
+  cursor: default;
+}
+.calendar .days li{
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
+}
+.days li.active{
+  color: #3ffd00;
+}
+.days li::before{
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.days li.active::before{
+    outline-style: dotted;
+    outline-color: #ff0000;
+    outline-width: 0.15cm;
+}
+.days li:not(.active):hover::before{
+  background: #17010a;
+}
+.btn {
+  padding-inline: 1.5rem;
+  padding-block: 0.75rem;
+  border-radius: 100px;
+  background-color: white;
+  border: 5px solid #080900;
+  outline: none;
+  position: absolute;
+  left: 50%;
+  top: 88%;
+}
